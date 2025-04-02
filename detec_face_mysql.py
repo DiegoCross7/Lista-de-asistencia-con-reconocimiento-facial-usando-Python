@@ -1,3 +1,8 @@
+import os
+os.chdir(r"C:\Users\Usuario\OneDrive\Documentos\Lista Asistencia\Lista-de-asistencia-con-reconocimiento-facial-usando-Python")
+print("Nuevo directorio de trabajo:", os.getcwd())
+
+
 import face_recognition
 import cv2
 import numpy as np
@@ -7,8 +12,8 @@ from datetime import datetime
 # Conexion a la base de datos de myqql
 db_connection = mysql.connector.connect(
     host="localhost",
-    user="raymundo",
-    password="raymundo1234",
+    user="root",
+    password="",
     database="asistencia_del_dia"
 )
 db_cursor = db_connection.cursor()
@@ -26,7 +31,7 @@ CREATE TABLE IF NOT EXISTS registro (
 db_cursor.execute(create_table_query)
 
 # cargar imagen a reconocer
-obama_image = face_recognition.load_image_file("obama.jpg")
+obama_image = face_recognition.load_image_file(r"C:\Users\Usuario\OneDrive\Documentos\Lista Asistencia\Lista-de-asistencia-con-reconocimiento-facial-usando-Python\obama.jpg")
 obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
 # Cargar imagen a reconocer

@@ -13,8 +13,8 @@ def get_data_from_mysql():
     # Conectarse a la base de datos MySQL
     connection = mysql.connector.connect(
         host="localhost",
-        user="raymundo",
-        password="raymundo1234",
+        user="root",
+        password="",
         database="asistencia_del_dia"
     )
     cursor = connection.cursor()
